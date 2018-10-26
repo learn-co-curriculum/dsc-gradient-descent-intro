@@ -1,0 +1,1 @@
+# dsc-2-14-10-introduction-to-gradient-descent
