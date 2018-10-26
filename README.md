@@ -11,6 +11,7 @@ Once calculating the accuracy of a line, we are pretty close to improving upon a
 
 ## Objectives 
 
+You will be able to:
 * Understand how to go from RSS to finding a "best fit" line
 * Understand a cost curve and what it displays
 
