@@ -226,7 +226,7 @@ table
 
 Notice what the above table represents.  While keeping our value of $b$ fixed at 1.319, we moved towards a smaller residual sum of squares (RSS) by changing our value of $m$, our slope. 
 
-Setting $m$ to 54 produced a lower error than at 54.550.  We kept moving our $b$ value lower until we set $m$ = 52, at which point our error began to increase.  Therefore, we know that a value of $b$ between 52 and 53 produces the smallest RSS for our data while $b = 1.319$. 
+Setting $m$ to 54 produced a lower error than at 54.550.  We kept moving our $m$ value lower until we set $m$ = 52, at which point our error began to increase.  Therefore, we know that a value of $m$ between 52 and 53 produces the smallest RSS for our data while $b = 1.319$. 
 
 This changing output of RSS based on a changing input of different regression lines is called our **cost function**.  Let's plot this chart to see it better.
 
