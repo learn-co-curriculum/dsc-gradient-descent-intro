@@ -3,7 +3,7 @@
 
 ## Introduction 
 
-In previous sections we used Scikit-Learn, Statsmodels and ad-hoc OLS programming to find the best fit line when building a linear regression model. We also mentioned, however, that using closed-form Ordinary Least Squares programming might become computationally expensive when there are many features. Therefore, iterative algorithms like the *gradient descent* algorithm are the basis of many models in statistics and machine learning!
+It's possible to solve for the optimal values of a regression using closed-form Ordinary Least Squares programming when there are a limited number of features, but this process might become computationally expensive when there are many features. Therefore, iterative algorithms like the *gradient descent* algorithm are the basis of many models in statistics and machine learning!
 
 You previously saw how after choosing the slope and y-intercept values of a regression line, we can calculate the residual sum of squares (RSS) and related root mean squared error.  We can use either the RSS or RMSE to calculate the accuracy of a line. In this lesson we'll use the RSS to iteratively find the best fit line for our problem at hand!
 
@@ -51,7 +51,7 @@ build_regression_line(x,y)
 
 
 
-    {'int': 1.3188915249780635, 'slope': 54.550106055369}
+    {'slope': 54.550106055369, 'int': 1.3188915249780635}
 
 
 
@@ -169,7 +169,7 @@ We'll eventually tweak and improve upon that process, but for now it will do.  I
 
 #### Updating the regression line to improve accuracy
 
-Ok, so we have a regression line of $\overline{y} = \overline{m}x + \overline{b} $, and we started with values of $b = 1.319 $ and $m = 54.550 $.  Then seeing how well this regression line matched our dataset, we calculated that $ RSS = 279.99 $.  Our next step is to plug in different values of $m$ and see how RSS changes.  Let's try $m$ = 54 instead of $54.550$.
+Ok, so we have a regression line of $y = mx + b $, and we started with values of $b = 1.319 $ and $m = 54.550 $.  Then seeing how well this regression line matched our dataset, we calculated that $ RSS = 279.99 $.  Our next step is to plug in different values of $m$ and see how RSS changes.  Let's try $m$ = 54 instead of $54.550$.
 
 
 ```python
