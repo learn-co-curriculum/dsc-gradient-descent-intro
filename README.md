@@ -149,6 +149,7 @@ root_mean_squared_error(x, y, 54.550, 1.319)
     0.56
 
 
+
 We can see that the RSS is equal to 279.99 and the RMSE is 0.56 for our regression line! Do you think we can do better?
 
 ### Moving towards gradient descent
