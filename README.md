@@ -5,7 +5,7 @@
 
 It's possible to solve for the optimal values of a regression using closed-form Ordinary Least Squares programming when there are a limited number of features, but this process might become computationally expensive when there are many features. Therefore, iterative algorithms like the *gradient descent* algorithm are the basis of many models in statistics and machine learning!
 
-You previously saw how after choosing the slope and y-intercept values of a regression line, we can calculate the residual sum of squares (RSS) and related root mean squared error.  We can use either the RSS or RMSE to calculate the accuracy of a line. In this lesson we'll use the RSS to iteratively find the best fit line for our problem at hand!
+You previously saw how after choosing the slope and y-intercept values of a regression line, we can calculate the residual sum of squares (RSS) and related root mean squared error. We can use either the RSS or RMSE to calculate the accuracy of a line. In this lesson, we'll use the RSS to iteratively find the best fit line for our problem at hand!
 
 Once calculating the accuracy of a line, we are pretty close to improving upon a line by minimizing the RSS.  This is the task of the gradient descent technique.  But before learning about gradient descent, let's review and ensure that we understand how to evaluate how our line fits our data.  
 
@@ -17,7 +17,7 @@ You will be able to:
 
 ## Review of plotting our data and a regression line
 
-For this example, let's imagine that we have an predictor $x$ and a dependent variable $y$. We construct or data in a way that we know that the "actual" line that we're looking at has an 
+For this example, let's imagine that we have a predictor $x$ and a dependent variable $y$. We construct or data in a way that we know that the "actual" line that we're looking at has an 
 - intercept, $\beta_0$ of 3 (which we will refer to as $b$ when estimating it)
 - $\beta_1$ of 50 (which we will refer to as $m$ when estimating it)
 
@@ -149,6 +149,7 @@ root_mean_squared_error(x, y, 54.550, 1.319)
     0.56
 
 
+
 We can see that the RSS is equal to 279.99 and the RMSE is 0.56 for our regression line! Do you think we can do better?
 
 ### Moving towards gradient descent
@@ -164,7 +165,7 @@ So this will be our technique for finding our "best fit" line:
 > * Repeat this process
 > * The regression line (that is, the values of $b$ and $m$) with the smallest RSS is our **best fit line**
 
-We'll eventually tweak and improve upon that process, but for now it will do.  In fact, we will make things even easier at first by holding $b$ fixed to a constant value while we experiment with different $m$ values.  In later lessons, we will change both variables.
+We'll eventually tweak and improve upon that process, but for now, it will do.  In fact, we will make things even easier at first by holding $b$ fixed to a constant value while we experiment with different $m$ values.  In later lessons, we will change both variables.
 
 #### Updating the regression line to improve accuracy
 
