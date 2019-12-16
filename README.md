@@ -12,14 +12,14 @@ Once calculating the accuracy of a line, we are pretty close to improving upon a
 ## Objectives 
 
 You will be able to:
-* Understand how to go from RSS to finding a "best fit" line
-* Understand a cost curve and what it displays
+* Describe what gradient descent is, and its relationship to minima
+* Describe a cost curve and what it means to move along it
 
 ## Review of plotting our data and a regression line
 
-For this example, let's imagine that we have a predictor $x$ and a dependent variable $y$. We construct or data in a way that we know that the "actual" line that we're looking at has an 
-- intercept, $\beta_0$ of 3 (which we will refer to as $b$ when estimating it)
-- $\beta_1$ of 50 (which we will refer to as $m$ when estimating it)
+For this example, let's imagine that we have a predictor $x$ and a dependent variable $y$. We construct our data in a way that we know that the "actual" line that we're looking at has an 
+- intercept, $\beta_0$ equal to 3 (which we will refer to as $b$ when estimating it)
+- $\beta_1$ equal to 50 (which we will refer to as $m$ when estimating it)
 
 
 ```python
@@ -34,14 +34,18 @@ y = 3+ 50* x + y_randterm
 plt.plot(x, y, '.b')
 plt.xlabel("x", fontsize=14)
 plt.ylabel("y", fontsize=14);
-
-#data = np.array([x, y])
 ```
+
+Let's again come up with some numbers for a slope and a y-intercept.  
+
+>One (not so great) technique to get the slope, is by drawing a line between the first and last points.  And from there, we calculate the value of $b$.  You can use the `build_regression_line` function, defined in our linear_equations library, `linear_equatuions.py`, which quickly does this for us.
 
 
 ```python
 from linear_equations import build_regression_line
 ```
+
+Let's pass $x$ and $y$ into our `build_regression_line` function. 
 
 
 ```python
@@ -51,15 +55,9 @@ build_regression_line(x,y)
 
 
 
-    {'slope': 54.550106055369, 'int': 1.3188915249780635}
+    {'int': 1.3188915249780635, 'slope': 54.550106055369}
 
 
-
-Let's again come up with some numbers for a slope and a y-intercept.  
-
->One (not so great) technique to get the slope, is by drawing a line between the first and last points.  And from there, we calculate the value of $b$.  You can use the `build_regression_line` function, defined in our linear_equations library, `linear_equatuions.py`, which quickly does this for us.
-
-Let's pass $x$ and $y$ into our `build_regression_line` function. 
 
 Turning this into a regression formula, we have the following.
 
@@ -86,7 +84,7 @@ plt.ylabel("y", fontsize=14);
 ```
 
 
-![png](index_files/index_15_0.png)
+![png](index_files/index_13_0.png)
 
 
 ## Evaluating the regression line
@@ -243,7 +241,7 @@ plt.ylabel("RSS", fontsize=14);
 ```
 
 
-![png](index_files/index_32_0.png)
+![png](index_files/index_30_0.png)
 
 
 The graph above is called the **cost curve**.  It is a plot of the RSS for different values of $m$.    The curve demonstrates that when $m$ is between 52 and 53, the RSS is lowest.  This technique of optimizing towards a minimum value is called *gradient descent*.  Here, we *descend* along a cost curve.  As we change our variable, we need to stop when the value of our RSS no longer decreases.
