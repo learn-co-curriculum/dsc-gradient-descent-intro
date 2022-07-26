@@ -1,4 +1,3 @@
-
 # Introduction to Gradient Descent
 
 ## Introduction 
@@ -12,6 +11,7 @@ Once calculating the accuracy of a line, we are pretty close to improving upon a
 ## Objectives 
 
 You will be able to:
+
 * Describe what gradient descent is, and its relationship to minima
 * Describe a cost curve and what it means to move along it
 
@@ -84,7 +84,9 @@ plt.ylabel("y", fontsize=14);
 ```
 
 
+    
 ![png](index_files/index_13_0.png)
+    
 
 
 ## Evaluating the regression line
@@ -241,7 +243,9 @@ plt.ylabel("RSS", fontsize=14);
 ```
 
 
+    
 ![png](index_files/index_30_0.png)
+    
 
 
 The graph above is called the **cost curve**.  It is a plot of the RSS for different values of $m$.    The curve demonstrates that when $m$ is between 52 and 53, the RSS is lowest.  This technique of optimizing towards a minimum value is called *gradient descent*.  Here, we *descend* along a cost curve.  As we change our variable, we need to stop when the value of our RSS no longer decreases.
