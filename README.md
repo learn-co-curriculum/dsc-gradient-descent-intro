@@ -36,6 +36,12 @@ plt.xlabel("x", fontsize=14)
 plt.ylabel("y", fontsize=14);
 ```
 
+
+    
+![png](index_files/index_5_0.png)
+    
+
+
 Let's again come up with some numbers for a slope and a y-intercept.  
 
 >One (not so great) technique to get the slope, is by drawing a line between the first and last points.  And from there, we calculate the value of $b$.  You can use the `build_regression_line` function, defined in our linear_equations library, `linear_equatuions.py`, which quickly does this for us.
@@ -55,7 +61,7 @@ build_regression_line(x,y)
 
 
 
-    {'int': 1.3188915249780635, 'slope': 54.550106055369}
+    {'slope': 54.550106055369, 'int': 1.3188915249780635}
 
 
 
@@ -108,7 +114,7 @@ def residual_sum_squares(x_values, y_values, m, b):
     return round(sum(squared_errors(x_values, y_values, m, b)), 2)
 
 def root_mean_squared_error(x_values, y_values, m, b):
-    return round(math.sqrt(sum(squared_errors(x_values, y_values, m, b)))/len(x_values), 2)
+    return round(math.sqrt(sum(squared_errors(x_values, y_values, m, b))/len(x_values)), 2)
 ```
 
 
@@ -146,11 +152,11 @@ root_mean_squared_error(x, y, 54.550, 1.319)
 
 
 
-    0.56
+    3.05
 
 
 
-We can see that the RSS is equal to 279.99 and the RMSE is 0.56 for our regression line! Do you think we can do better?
+We can see that the RSS is equal to 279.99 and the RMSE is 3.05 for our regression line! Do you think we can do better?
 
 ### Moving towards gradient descent
 
